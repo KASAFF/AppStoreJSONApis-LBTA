@@ -52,9 +52,7 @@ class AppSearchController: BaseListController, UICollectionViewDelegateFlowLayou
     
     var timer: Timer?
 
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
-        
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {        
         // introduce some delay before performing the search
         // Thtottling the search
         timer?.invalidate()

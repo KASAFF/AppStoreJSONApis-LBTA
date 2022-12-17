@@ -56,7 +56,6 @@ class AppDetailController: BaseListController, UICollectionViewDelegateFlowLayou
                 print("Failed to decode reviews:", err)
             }
             self.reviews = reviews
-            reviews?.feed.entry.forEach({print($0.rating.label)})
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }

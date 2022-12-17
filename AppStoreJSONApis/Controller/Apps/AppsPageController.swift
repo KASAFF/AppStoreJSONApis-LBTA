@@ -47,7 +47,6 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
         
         dispatchGroup.enter()
         Service.shared.fetchTopFree { appGroup, err in
-            print("DoneWithGames")
             dispatchGroup.leave()
             group1 = appGroup
             
@@ -55,13 +54,11 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
         }
         dispatchGroup.enter()
         Service.shared.fetchTopPaid { appGroup, err in
-            print("DoneWithTopPaid")
             dispatchGroup.leave()
             group2 = appGroup
         }
         dispatchGroup.enter()
         Service.shared.fetchAppGroup(urlString: "https://rss.applemarketingtools.com/api/v2/us/music/most-played/25/albums.json") { appGroup, err in
-            print("DoneWithMusic")
             dispatchGroup.leave()
             group3 = appGroup
         }
