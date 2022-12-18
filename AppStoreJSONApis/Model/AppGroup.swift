@@ -16,7 +16,7 @@ struct Feed: Decodable {
     let results: [FeedResult]
 }
 
-struct FeedResult: Decodable {
+struct FeedResult: Decodable, Hashable {
     let id, name, artistName, artworkUrl100: String
 }
 
